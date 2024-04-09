@@ -52,10 +52,18 @@ def generate_launch_description():
             get_package_share_directory(package_name), 'launch', 'online_async_launch.py')])
     )
 
+    # Navigation bringup
+    nav2_bringup = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory(package_name), 'launch', 'navigation_launch.py')
+        ])
+    )
+
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
         slam_toolbox,
+        # nav2_bringup,
     ])
