@@ -1,0 +1,40 @@
+[0.127s] Invoking command in '/home/ubuntu/Desktop/robot_ws/build/articubot_one': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/robot_ws/build/articubot_one -- -j16 -l16
+[0.587s] Invoked command in '/home/ubuntu/Desktop/robot_ws/build/articubot_one' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/Desktop/robot_ws/build/articubot_one -- -j16 -l16
+[0.659s] Invoking command in '/home/ubuntu/Desktop/robot_ws/build/articubot_one': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/robot_ws/build/articubot_one
+[0.679s] -- Install configuration: ""
+[0.754s] -- Execute custom install script
+[0.842s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/config/drive_bot.rviz
+[0.852s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/config/main.rviz
+[0.866s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/config/mapper_params_online_async.yaml
+[0.866s] -- Symlinking: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/config/nav2_params.yaml
+[0.901s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/config/view_bot.rviz
+[0.920s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/description/gazebo_control.xacro
+[0.921s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/description/inertial_macros.xacro
+[0.931s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/description/lidar.xacro
+[0.932s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/description/robot.urdf.xacro
+[0.933s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/description/robot_core.xacro
+[0.934s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/launch/launch_sim.launch.py
+[0.935s] -- Symlinking: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/launch/localization_launch.py
+[0.959s] -- Symlinking: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/launch/navigation_launch.py
+[0.982s] -- Symlinking: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/launch/online_async_launch.py
+[0.994s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/launch/rsp.launch.py
+[0.996s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/worlds/empty.world
+[0.996s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/worlds/fun.world
+[0.997s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/worlds/my_world.world
+[0.998s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/worlds/obstacles.world
+[1.014s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/ament_index/resource_index/package_run_dependencies/articubot_one
+[1.015s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/ament_index/resource_index/parent_prefix_path/articubot_one
+[1.016s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/environment/ament_prefix_path.sh
+[1.016s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/environment/ament_prefix_path.dsv
+[1.017s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/environment/path.sh
+[1.018s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/environment/path.dsv
+[1.018s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/local_setup.bash
+[1.019s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/local_setup.sh
+[1.020s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/local_setup.zsh
+[1.020s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/local_setup.dsv
+[1.021s] -- Symlinking: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/package.dsv
+[1.054s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/ament_index/resource_index/packages/articubot_one
+[1.060s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/cmake/articubot_oneConfig.cmake
+[1.061s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/cmake/articubot_oneConfig-version.cmake
+[1.062s] -- Up-to-date symlink: /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/package.xml
+[1.067s] Invoked command in '/home/ubuntu/Desktop/robot_ws/build/articubot_one' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/Desktop/robot_ws/build/articubot_one
