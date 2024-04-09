@@ -53,11 +53,11 @@ def generate_launch_description():
     )
 
     # Navigation bringup
-    nav2_bringup = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            os.path.join(get_package_share_directory(package_name), 'launch', 'navigation_launch.py')
-        ])
-    )
+    # nav2_bringup = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource([
+    #         os.path.join(get_package_share_directory(package_name), 'launch', 'navigation_launch.py')
+    #     ])
+    # )
 
     # Launch them all!
     return LaunchDescription([
