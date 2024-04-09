@@ -17,6 +17,7 @@
 /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/worlds/fun.world
 /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/worlds/my_world.world
 /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/worlds/obstacles.world
+/home/ubuntu/Desktop/robot_ws/install/articubot_one/lib/articubot_one/move_robot.py
 /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/ament_index/resource_index/package_run_dependencies/articubot_one
 /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/ament_index/resource_index/parent_prefix_path/articubot_one
 /home/ubuntu/Desktop/robot_ws/install/articubot_one/share/articubot_one/environment/ament_prefix_path.sh

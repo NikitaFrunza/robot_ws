@@ -340,6 +340,9 @@ articubot_one_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 articubot_one_SOURCE_DIR:STATIC=/home/ubuntu/Desktop/robot_ws/src/articubot_one
 
+//The directory containing a CMake configuration file for rclpy.
+rclpy_DIR:PATH=/opt/ros/humble/share/rclpy/cmake
+
 //Path to a program.
 xmllint_BIN:FILEPATH=/usr/bin/xmllint
 

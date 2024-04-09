@@ -313,6 +313,9 @@ message(STATUS "Execute custom install script")
 # install(DIRECTORY "config" "description" "launch" "worlds" "DESTINATION" "share/articubot_one")
 ament_cmake_symlink_install_directory("/home/ubuntu/Desktop/robot_ws/src/articubot_one" DIRECTORY "config" "description" "launch" "worlds" "DESTINATION" "share/articubot_one")
 
+# install(PROGRAMS "scripts/move_robot.py" "DESTINATION" "lib/articubot_one")
+ament_cmake_symlink_install_programs("/home/ubuntu/Desktop/robot_ws/src/articubot_one" PROGRAMS "scripts/move_robot.py" "DESTINATION" "lib/articubot_one")
+
 # install(FILES "/home/ubuntu/Desktop/robot_ws/build/articubot_one/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/articubot_one" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/ubuntu/Desktop/robot_ws/src/articubot_one" FILES "/home/ubuntu/Desktop/robot_ws/build/articubot_one/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/articubot_one" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 

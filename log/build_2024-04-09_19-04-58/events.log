@@ -1,0 +1,55 @@
+[0.000000] (-) TimerEvent: {}
+[0.000266] (articubot_one) JobQueued: {'identifier': 'articubot_one', 'dependencies': OrderedDict()}
+[0.000368] (articubot_one) JobStarted: {'identifier': 'articubot_one'}
+[0.062863] (articubot_one) JobProgress: {'identifier': 'articubot_one', 'progress': 'cmake'}
+[0.063460] (articubot_one) Command: {'cmd': ['/usr/bin/cmake', '/home/ubuntu/Desktop/robot_ws/src/articubot_one', '-DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/robot_ws/install/articubot_one'], 'cwd': '/home/ubuntu/Desktop/robot_ws/build/articubot_one', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '2385'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/999/bus,guid=98af0cb678e4b77cd1a678cf66156dcf'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/ubuntu/Desktop/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2385,unix/ubuntu:/tmp/.ICE-unix/2385'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/34979ae9_3e8e_4e3d_8a5f_84813c5d0fa8'), ('XDG_RUNTIME_DIR', '/run/user/999'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/999/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.96'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/999/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/Desktop/robot_ws/install/articubot_one:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/999/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/Desktop/robot_ws/build/articubot_one'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/999/bus,guid=98af0cb678e4b77cd1a678cf66156dcf'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/Desktop/robot_ws/install/articubot_one')]), 'shell': False}
+[0.076664] (articubot_one) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099330] (-) TimerEvent: {}
+[0.199663] (-) TimerEvent: {}
+[0.237749] (articubot_one) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.259845] (articubot_one) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.299785] (-) TimerEvent: {}
+[0.304442] (articubot_one) StderrLine: {'line': b"Error parsing '/home/ubuntu/Desktop/robot_ws/src/articubot_one/package.xml':\n"}
+[0.340622] (articubot_one) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.340776] (articubot_one) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 610, in parse_package_string\n'}
+[0.399981] (-) TimerEvent: {}
+[0.440976] (articubot_one) StderrLine: {'line': b'    root = dom.parseString(data)\n'}
+[0.441255] (articubot_one) StderrLine: {'line': b'  File "/usr/lib/python3.10/xml/dom/minidom.py", line 2000, in parseString\n'}
+[0.442460] (articubot_one) StderrLine: {'line': b'    return expatbuilder.parseString(string)\n'}
+[0.442694] (articubot_one) StderrLine: {'line': b'  File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 925, in parseString\n'}
+[0.443625] (articubot_one) StderrLine: {'line': b'    return builder.parseString(string)\n'}
+[0.443956] (articubot_one) StderrLine: {'line': b'  File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 223, in parseString\n'}
+[0.444248] (articubot_one) StderrLine: {'line': b'    parser.Parse(string, True)\n'}
+[0.444456] (articubot_one) StderrLine: {'line': b'xml.parsers.expat.ExpatError: mismatched tag: line 12, column 28\n'}
+[0.444712] (articubot_one) StderrLine: {'line': b'\n'}
+[0.444886] (articubot_one) StderrLine: {'line': b'During handling of the above exception, another exception occurred:\n'}
+[0.445052] (articubot_one) StderrLine: {'line': b'\n'}
+[0.445209] (articubot_one) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[0.445368] (articubot_one) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>\n'}
+[0.445580] (articubot_one) StderrLine: {'line': b'    main()\n'}
+[0.445751] (articubot_one) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main\n'}
+[0.445916] (articubot_one) StderrLine: {'line': b'    raise e\n'}
+[0.446079] (articubot_one) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main\n'}
+[0.446237] (articubot_one) StderrLine: {'line': b'    package = parse_package_string(\n'}
+[0.446399] (articubot_one) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 612, in parse_package_string\n'}
+[0.446561] (articubot_one) StderrLine: {'line': b"    raise InvalidPackage('The manifest contains invalid XML:\\n%s' % ex, filename)\n"}
+[0.446726] (articubot_one) StderrLine: {'line': b"catkin_pkg.package.InvalidPackage: Error(s) in package '/home/ubuntu/Desktop/robot_ws/src/articubot_one/package.xml':\n"}
+[0.446893] (articubot_one) StderrLine: {'line': b'The manifest contains invalid XML:\n'}
+[0.447058] (articubot_one) StderrLine: {'line': b'mismatched tag: line 12, column 28\n'}
+[0.469462] (articubot_one) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):\n'}
+[0.469790] (articubot_one) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[0.469921] (articubot_one) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py\n'}
+[0.470045] (articubot_one) StderrLine: {'line': b'  /home/ubuntu/Desktop/robot_ws/src/articubot_one/package.xml\n'}
+[0.470164] (articubot_one) StderrLine: {'line': b'  /home/ubuntu/Desktop/robot_ws/build/articubot_one/ament_cmake_core/package.cmake)\n'}
+[0.470282] (articubot_one) StderrLine: {'line': b'  returned error code 1\n'}
+[0.470400] (articubot_one) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.470521] (articubot_one) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)\n'}
+[0.470640] (articubot_one) StderrLine: {'line': b'  /opt/ros/humble/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)\n'}
+[0.470785] (articubot_one) StderrLine: {'line': b'  CMakeLists.txt:32 (ament_lint_auto_find_test_dependencies)\n'}
+[0.471027] (articubot_one) StderrLine: {'line': b'\n'}
+[0.471162] (articubot_one) StderrLine: {'line': b'\x1b[0m\n'}
+[0.471301] (articubot_one) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[0.471440] (articubot_one) StdoutLine: {'line': b'See also "/home/ubuntu/Desktop/robot_ws/build/articubot_one/CMakeFiles/CMakeOutput.log".\n'}
+[0.475917] (articubot_one) CommandEnded: {'returncode': 1}
+[0.477032] (articubot_one) JobEnded: {'identifier': 'articubot_one', 'rc': 1}
+[0.487837] (-) EventReactorShutdown: {}

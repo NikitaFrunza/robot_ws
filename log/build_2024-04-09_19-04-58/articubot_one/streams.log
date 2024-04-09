@@ -1,0 +1,45 @@
+[0.066s] Invoking command in '/home/ubuntu/Desktop/robot_ws/build/articubot_one': /usr/bin/cmake /home/ubuntu/Desktop/robot_ws/src/articubot_one -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/robot_ws/install/articubot_one
+[0.077s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.237s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.260s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.304s] Error parsing '/home/ubuntu/Desktop/robot_ws/src/articubot_one/package.xml':
+[0.340s] Traceback (most recent call last):
+[0.340s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 610, in parse_package_string
+[0.441s]     root = dom.parseString(data)
+[0.441s]   File "/usr/lib/python3.10/xml/dom/minidom.py", line 2000, in parseString
+[0.442s]     return expatbuilder.parseString(string)
+[0.442s]   File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 925, in parseString
+[0.443s]     return builder.parseString(string)
+[0.444s]   File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 223, in parseString
+[0.444s]     parser.Parse(string, True)
+[0.444s] xml.parsers.expat.ExpatError: mismatched tag: line 12, column 28
+[0.444s] 
+[0.445s] During handling of the above exception, another exception occurred:
+[0.445s] 
+[0.445s] Traceback (most recent call last):
+[0.445s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+[0.445s]     main()
+[0.445s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+[0.446s]     raise e
+[0.446s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+[0.446s]     package = parse_package_string(
+[0.446s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 612, in parse_package_string
+[0.446s]     raise InvalidPackage('The manifest contains invalid XML:\n%s' % ex, filename)
+[0.446s] catkin_pkg.package.InvalidPackage: Error(s) in package '/home/ubuntu/Desktop/robot_ws/src/articubot_one/package.xml':
+[0.447s] The manifest contains invalid XML:
+[0.447s] mismatched tag: line 12, column 28
+[0.469s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[0.469s]   execute_process(/usr/bin/python3
+[0.470s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[0.470s]   /home/ubuntu/Desktop/robot_ws/src/articubot_one/package.xml
+[0.470s]   /home/ubuntu/Desktop/robot_ws/build/articubot_one/ament_cmake_core/package.cmake)
+[0.470s]   returned error code 1
+[0.470s] Call Stack (most recent call first):
+[0.470s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[0.470s]   /opt/ros/humble/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)
+[0.471s]   CMakeLists.txt:32 (ament_lint_auto_find_test_dependencies)
+[0.471s] 
+[0.471s] [0m
+[0.471s] -- Configuring incomplete, errors occurred!
+[0.471s] See also "/home/ubuntu/Desktop/robot_ws/build/articubot_one/CMakeFiles/CMakeOutput.log".
+[0.476s] Invoked command in '/home/ubuntu/Desktop/robot_ws/build/articubot_one' returned '1': /usr/bin/cmake /home/ubuntu/Desktop/robot_ws/src/articubot_one -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/robot_ws/install/articubot_one
