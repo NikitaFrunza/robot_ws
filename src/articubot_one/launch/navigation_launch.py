@@ -29,10 +29,11 @@ from nav2_common.launch import RewrittenYaml
 def generate_launch_description():
     # Get the launch directory
     package_name='articubot_one'
+
     bringup_dir = get_package_share_directory(package_name)
 
     namespace = LaunchConfiguration('namespace')
-    use_sim_time = 'true'
+    use_sim_time = LaunchConfiguration('use_sim_time')
     autostart = LaunchConfiguration('autostart')
     params_file = LaunchConfiguration('params_file')
     use_composition = LaunchConfiguration('use_composition')
@@ -81,7 +82,7 @@ def generate_launch_description():
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
-        default_value='true',
+        default_value='false',
         description='Use simulation (Gazebo) clock if true')
 
     declare_params_file_cmd = DeclareLaunchArgument(
