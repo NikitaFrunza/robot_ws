@@ -54,49 +54,58 @@ def main():
     # global_costmap = navigator.getGlobalCostmap()
     # local_costmap = navigator.getLocalCostmap()
 
-    # Go to our demos first goal pose
-    goal_pose = PoseStamped()
-    goal_pose.header.frame_id = 'map'
-    goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-    goal_pose.pose.position.x = 2.0
-    goal_pose.pose.position.y = -3.0
-    goal_pose.pose.orientation.w = 1.0
+    input_state = True
+    # nav_state = False
+
+    while 1:
+        if (input_state):
+            xyz= input("Enter x,y: ")
+            x_goal, y_goal = xyz.split(',')
+            # Go to our demos first goal pose
+            goal_pose = PoseStamped()
+            goal_pose.header.frame_id = 'map'
+            goal_pose.header.stamp = navigator.get_clock().now().to_msg()
+            goal_pose.pose.position.x = float(x_goal)
+            goal_pose.pose.position.y = float(y_goal)
+            goal_pose.pose.orientation.w = 1.0
+            input_state = False
+        else:
+            navigator.goToPose(goal_pose)
+
+            i = 0
+            while not navigator.isTaskComplete():
+                # Do something with the feedback
+                i = i + 1
+                feedback = navigator.getFeedback()
+                if feedback and i % 5 == 0:
+                    print('Estimated time of arrival: ' + '{0:.0f}'.format(
+                        Duration.from_msg(feedback.estimated_time_remaining).nanoseconds / 1e9)
+                        + ' seconds.')
+
+                    # Some navigation timeout to demo cancellation
+                    if Duration.from_msg(feedback.navigation_time) > Duration(seconds=600.0):
+                        navigator.cancelTask()
+
+            # Do something depending on the return code
+            result = navigator.getResult()
+            if result == TaskResult.SUCCEEDED:
+                print('Goal succeeded!')
+            elif result == TaskResult.CANCELED:
+                print('Goal was canceled!')
+            elif result == TaskResult.FAILED:
+                print('Goal failed!')
+            else:
+                print('Goal has an invalid return status!')
+            
+            input_state = True
+
+
+
 
     # sanity check a valid path exists
     # path = navigator.getPath(initial_pose, goal_pose)
 
-    navigator.goToPose(goal_pose)
-
-    i = 0
-    while not navigator.isTaskComplete():
-        ################################################
-        #
-        # Implement some code here for your application!
-        #
-        ################################################
-
-        # Do something with the feedback
-        i = i + 1
-        feedback = navigator.getFeedback()
-        if feedback and i % 5 == 0:
-            print('Estimated time of arrival: ' + '{0:.0f}'.format(
-                  Duration.from_msg(feedback.estimated_time_remaining).nanoseconds / 1e9)
-                  + ' seconds.')
-
-            # Some navigation timeout to demo cancellation
-            if Duration.from_msg(feedback.navigation_time) > Duration(seconds=600.0):
-                navigator.cancelTask()
-
-    # Do something depending on the return code
-    result = navigator.getResult()
-    if result == TaskResult.SUCCEEDED:
-        print('Goal succeeded!')
-    elif result == TaskResult.CANCELED:
-        print('Goal was canceled!')
-    elif result == TaskResult.FAILED:
-        print('Goal failed!')
-    else:
-        print('Goal has an invalid return status!')
+    
 
     navigator.lifecycleShutdown()
 
