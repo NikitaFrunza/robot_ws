@@ -22,6 +22,75 @@ from rclpy.duration import Duration
 Basic navigation demo to go to pose.
 """
 
+class Location:
+    def __init__(self, id_loc, x, y) -> None:
+        self.x = x
+        self.y = y
+        self.id_loc = id_loc
+        self.objects = dict()
+    
+    def add_item(self, name, obj_quant):
+        if name in self.objects:
+            self.objects[name] += obj_quant
+        else:
+            self.objects[name] = obj_quant
+    
+    def del_item(self, name, obj_quant):
+        assert name in self.objects and self.objects[name] - obj_quant < 0
+        self.objects[name] -= obj_quant      
+   
+def menu():
+    while True:
+        print("Add location: 1")
+        print("Add object: 2")
+        print("Deliver: 3")
+        choice = input("Enter your choice: ") 
+        if int(choice) == 1 or int(choice) == 2 or int(choice) == 3:
+            return int(choice) 
+        print("Invalid choice")
+
+def print_locations(location_list):
+    for location in location_list:
+        print(location.id_loc, end = ', ')
+
+def print_location_objs(selected_location):
+    for name in selected_location.objects:
+        print(name, end=', ')
+
+def set_destination(x,y, navigator):
+    goal_pose = PoseStamped()
+    goal_pose.header.frame_id = 'map'
+    goal_pose.header.stamp = navigator.get_clock().now().to_msg()
+    goal_pose.pose.position.x = x
+    goal_pose.pose.position.y = y
+    goal_pose.pose.orientation.w = 1.0
+    return goal_pose
+
+def navigation_status(navigator):
+    i = 0
+    while not navigator.isTaskComplete():
+        # Do something with the feedback
+        i = i + 1
+        feedback = navigator.getFeedback()
+        if feedback and i % 5 == 0:
+            print('Estimated time of arrival: ' + '{0:.0f}'.format(
+                Duration.from_msg(feedback.estimated_time_remaining).nanoseconds / 1e9)
+                + ' seconds.')
+
+            # Some navigation timeout to demo cancellation
+            if Duration.from_msg(feedback.navigation_time) > Duration(seconds=600.0):
+                navigator.cancelTask()
+
+    # Do something depending on the return code
+    result = navigator.getResult()
+    if result == TaskResult.SUCCEEDED:
+        print('Goal succeeded!')
+    elif result == TaskResult.CANCELED:
+        print('Goal was canceled!')
+    elif result == TaskResult.FAILED:
+        print('Goal failed!')
+    else:
+        print('Goal has an invalid return status!')
 
 def main():
     rclpy.init()
@@ -38,74 +107,58 @@ def main():
     # initial_pose.pose.orientation.w = 0.0
     navigator.setInitialPose(initial_pose)
 
-    # Activate navigation, if not autostarted. This should be called after setInitialPose()
-    # or this will initialize at the origin of the map and update the costmap with bogus readings.
-    # If autostart, you should `waitUntilNav2Active()` instead.
-    # navigator.lifecycleStartup()
-
     # Wait for navigation to fully activate, since autostarting nav2
     navigator.waitUntilNav2Active()
 
-    # If desired, you can change or load the map as well
-    # navigator.changeMap('/path/to/map.yaml')
-
-    # You may use the navigator to clear or obtain costmaps
-    # navigator.clearAllCostmaps()  # also have clearLocalCostmap() and clearGlobalCostmap()
-    # global_costmap = navigator.getGlobalCostmap()
-    # local_costmap = navigator.getLocalCostmap()
-
-    input_state = True
-    # nav_state = False
+    location_list = []
 
     while 1:
-        if (input_state):
-            xyz= input("Enter x,y: ")
-            x_goal, y_goal = xyz.split(',')
-            # Go to our demos first goal pose
-            goal_pose = PoseStamped()
-            goal_pose.header.frame_id = 'map'
-            goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-            goal_pose.pose.position.x = float(x_goal)
-            goal_pose.pose.position.y = float(y_goal)
-            goal_pose.pose.orientation.w = 1.0
-            input_state = False
-        else:
-            navigator.goToPose(goal_pose)
+        option = menu()
 
-            i = 0
-            while not navigator.isTaskComplete():
-                # Do something with the feedback
-                i = i + 1
-                feedback = navigator.getFeedback()
-                if feedback and i % 5 == 0:
-                    print('Estimated time of arrival: ' + '{0:.0f}'.format(
-                        Duration.from_msg(feedback.estimated_time_remaining).nanoseconds / 1e9)
-                        + ' seconds.')
+        if (option == 1):
+            user_input = input("Enter location ID, x, y: ")
+            loc_ID, pos_x, pos_y = user_input.split(',')
+            location_list.append(Location(int(loc_ID), float(pos_x), float(pos_y)))
+        
+        if (option == 2):
+            print("Select location: ", end=' ')
+            print_locations(location_list)
+            print()
+            user_input_loc = input("ID of the location: ")
 
-                    # Some navigation timeout to demo cancellation
-                    if Duration.from_msg(feedback.navigation_time) > Duration(seconds=600.0):
-                        navigator.cancelTask()
+            selected_location = location_list[int(user_input_loc)-1]
+            print_location_objs(selected_location)
+            user_input_obj, user_input_quant = input("Name of the object and quantity: ").split(',')
 
-            # Do something depending on the return code
-            result = navigator.getResult()
-            if result == TaskResult.SUCCEEDED:
-                print('Goal succeeded!')
-            elif result == TaskResult.CANCELED:
-                print('Goal was canceled!')
-            elif result == TaskResult.FAILED:
-                print('Goal failed!')
-            else:
-                print('Goal has an invalid return status!')
+            selected_location.add_item(user_input_obj, user_input_quant)
+
+        if (option == 3):
+            print("Select location for pick up: ", end=' ')
+            print_locations(location_list)
+            print()
+            user_pickup_loc = input("ID of the location: ")
+
+            print("Select object: ", end=' ')
+            selected_location = location_list[int(user_pickup_loc)-1]
+            print_location_objs(selected_location)
+            print()
+            user_pickup_obj, user_pickup_quant = input("Name of the object and quantity: ").split(',')
+            # while (selected_location.objects[user_pickup_obj] - int(user_pickup_quant) < 0):
+            #     user_pickup_quant = input("Enter lower quantity: ")
+
+            delivery_x, delivery_y = input("Indicate delivery destination x,y: ").split(',')
+
+            goal_pose_pickup = set_destination(selected_location.x, selected_location.y, navigator)
+            navigator.goToPose(goal_pose_pickup)
+            navigation_status(navigator)
             
-            input_state = True
-
-
+            goal_pose_deliver = set_destination(float(delivery_x), float(delivery_y), navigator)
+            navigator.goToPose(goal_pose_deliver)
+            navigation_status(navigator)
 
 
     # sanity check a valid path exists
     # path = navigator.getPath(initial_pose, goal_pose)
-
-    
 
     navigator.lifecycleShutdown()
 
