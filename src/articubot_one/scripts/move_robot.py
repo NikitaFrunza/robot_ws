@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-# import rclpy
-# from rclpy.node import Node
-
-# class MyNode(Node):
-#     def __init__(self):
-#         super().__init__("move_robot")
-#         self.get_logger().info("Hello from first node")
-
-# def main(args=None):
-#     rclpy.init(args=args)
-#     node = MyNode()
-#     rclpy.shutdown()
-
-# if __name__ == '__main__':
-#     main()
-# /usr/bin/env python3
 # Copyright 2021 Samsung Research America
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
