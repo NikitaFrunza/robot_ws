@@ -113,8 +113,11 @@ def main():
     location_list = []
 
     while 1:
+        print()
+        print("--------------MENU--------------")
         option = menu()
-
+        print()
+        
         if (option == 1):
             user_input = input("Enter location ID, x, y: ")
             loc_ID, pos_x, pos_y = user_input.split(',')
